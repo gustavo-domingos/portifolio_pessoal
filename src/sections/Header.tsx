@@ -4,6 +4,7 @@ import {
   Typography,
   Button,
   Box,
+  Container,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -30,14 +31,14 @@ export function Header() {
         borderColor: "divider",
       }}
     >
-      <Toolbar sx={{ justifyContent: 'space-between' }}> 
+      <Container maxWidth="xl"> 
+        <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
         <Typography
           variant="h6"
           fontWeight="bold"
           component="a"
           href="/" 
           sx={{ 
-            flexGrow: 1, 
             textDecoration: 'none', 
             color: 'inherit',
             cursor: 'pointer' 
@@ -89,6 +90,7 @@ export function Header() {
         </Box>
         
       </Toolbar>
+      </Container>
     </AppBar>
   )
 }
