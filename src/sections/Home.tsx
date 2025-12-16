@@ -1,6 +1,7 @@
 import { Box, Stack } from "@mui/material";
 import { Hero } from "./Hero";
 import { About } from "./About";
+import { Header } from "./Header";
 import { Experience } from "./Experience";
 import { Projects } from "./Projects";
 import { motion } from "framer-motion";
@@ -8,11 +9,13 @@ import { motion } from "framer-motion";
 
 export function Home() {
   return (
-    <Box sx={{ minWidth: "100vw", overflowX: "hidden" }}>
+    <Box sx={{ width: "100%", overflowX: "hidden" }}>
+      <Header/>
+      
       <Box
         maxWidth="xl"
         mx="auto"
-        px={4}
+        px={{ xs: 2, sm: 4 }}
         pt={6}
       >
         <Box
@@ -20,22 +23,22 @@ export function Home() {
           width="100%"
           flexDirection={{ xs: "column", md: "row" }}
           gap={6}
-          alignItems="flex-start"
+          justifyContent="center" 
         >
-          <Box flex={1} width="100%">
+          <Box flex={{ md: 1 }} width="100%">
             <Hero />
           </Box>
 
           <Box
-            flex={1}
+            flex={{ md: 1 }}
             component={motion.div}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             width="100%"
-            pt={4}
           >
-            <Stack spacing={1} >
+            <Stack spacing={2}> 
               <About />
               <Experience />
             </Stack>
@@ -43,21 +46,19 @@ export function Home() {
         </Box>
       </Box>
 
-      <Box mt={1} mb={1}
+      <Box 
+        maxWidth="lg" 
+        mx="auto" 
+        px={{ xs: 2, sm: 4 }}
+        mt={1} 
+        mb={6}
         component={motion.div}
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
         <Projects />
-      </Box>
-
-      <Box mt={1} mb={1} 
-        component={motion.div}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
       </Box>
     </Box>
   );

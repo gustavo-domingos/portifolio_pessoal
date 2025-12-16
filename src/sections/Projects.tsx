@@ -18,14 +18,14 @@ const projects = [
   { 
     title: "Portfólio Pessoal", 
     desc: "Este próprio site, construído para demonstrar habilidades em desenvolvimento frontend. Tecnologias utilizadas: React, Vite, Material UI (MUI) e animações com Framer Motion.",
-    siteLink: "https://gustavo-domingos.github.io/",
-    repoFront: "https://github.com/gustavo-domingos/gustavo-domingos.github.io",
+    siteLink: "https://gustavo-domingos.github.io/portifolio_pessoal/",
+    repoFront: "https://github.com/gustavo-domingos/portifolio_pessoal",
   },
-  { 
-    title: "Horas Complementares", 
-    desc: "Sistema de gestão para simplificar a burocracia de horas complementares em instituições de ensino. API robusta construída com Java e Spring Boot, focada em otimizar o processo para alunos e professores.",
-    repoBack: "https://github.com/gustavo-domingos/aquarus-back-project/tree/master/complementary-activities",
-  },
+  // { 
+  //   title: "Horas Complementares", 
+  //   desc: "Sistema de gestão para simplificar a burocracia de horas complementares em instituições de ensino. API robusta construída com Java e Spring Boot, focada em otimizar o processo para alunos e professores.",
+  //   repoBack: "https://github.com/gustavo-domingos/aquarus-back-project/tree/master/complementary-activities",
+  // },
   { 
     title: "Mensageria", 
     desc: "Sistema simples de mensageria para envio de e-mails, com API em Spring Boot e UI em React. Totalmente containerizado usando Docker e Docker Compose, demonstrando habilidades de full-stack e deployment.",
@@ -35,8 +35,8 @@ const projects = [
 
 export function Projects() {
   return (
-    <Box id="projects-section" maxWidth="xl" mx="auto" px={4} py={8}>
-      <Typography variant="h4" fontWeight="bold" mb={6} textAlign="center">
+    <Box id="projects-section" width="100%" py={2}> 
+      <Typography variant="h4" fontWeight="bold" mb={4} textAlign="center">
         Projetos
       </Typography>
 
@@ -45,15 +45,15 @@ export function Projects() {
         flexDirection={{ xs: "column", md: "row" }}
         justifyContent="center"
         alignItems="stretch"
-        gap={4}
+        gap={2} 
         flexWrap="wrap"
       >
         {projects.map((project, index) => (
           <Box
             key={index}
             sx={{
-              flex: { xs: "1 1 100%", md: "1 1 calc(25% - 32px)" },
-              minWidth: { xs: "100%", sm: "300px" },
+              flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 16px)", md: "1 1 calc(25% - 16px)" },
+              minWidth: { xs: "100%", sm: "300px" }, 
             }}
           >
             <Card
