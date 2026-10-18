@@ -108,6 +108,32 @@
   overflow: hidden;
 }
 
+.case__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: var(--e-5);
+  padding: 0;
+  list-style: none;
+}
+
+.case__gallery figure {
+  display: grid;
+  gap: var(--e-2);
+}
+
+.case__gallery img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--curva);
+  border-radius: var(--raio);
+  background: var(--terreno);
+}
+
+.case__gallery figcaption {
+  color: var(--suave);
+  font-size: var(--t-sm);
+}
+
 .case__grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);

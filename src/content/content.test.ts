@@ -18,6 +18,7 @@ describe('conteúdo', () => {
       expect(e.highlights.length).toBe(c.highlights.length)
       expect(e.learned.length).toBe(c.learned.length)
       expect(e.sources.length).toBe(c.sources.length)
+      expect(e.images?.map((i) => i.src)).toEqual(c.images?.map((i) => i.src))
       expect(e.seed).toBe(c.seed)
     })
   })

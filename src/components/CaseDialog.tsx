@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { CaseStudy } from '../content'
 import { useLanguage } from '../i18n/context'
+import { asset } from '../lib/asset'
 import { TerrainThumb } from './TerrainThumb'
 import './CaseDialog.css'
 
@@ -50,6 +51,19 @@ export function CaseDialog({ study, onClose }: CaseDialogProps) {
           </header>
 
           <TerrainThumb seed={study.seed} className="case__banner" />
+
+          {study.images && study.images.length > 0 && (
+            <ul className="case__gallery">
+              {study.images.map((img) => (
+                <li key={img.src}>
+                  <figure>
+                    <img src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} loading="lazy" decoding="async" />
+                    {img.caption && <figcaption>{img.caption}</figcaption>}
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          )}
 
           <div className="case__grid">
             <div className="case__main">

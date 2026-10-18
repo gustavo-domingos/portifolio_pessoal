@@ -17,6 +17,15 @@ export interface Cited {
   source?: number
 }
 
+/** Print de tela de um case, servido de /public. Sempre com dados fictícios. */
+export interface CaseImage {
+  src: string
+  alt: string
+  caption?: string
+  width: number
+  height: number
+}
+
 export interface CaseStudy {
   id: CaseId
   title: string
@@ -35,6 +44,7 @@ export interface CaseStudy {
   /** Aviso mostrado quando não há link público (repositório privado, por exemplo). */
   note?: string
   sources: Link[]
+  images?: CaseImage[]
   /** Semente do terreno da miniatura. */
   seed: number
 }

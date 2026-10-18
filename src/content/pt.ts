@@ -230,10 +230,10 @@ export const pt: Content = {
           'Uma API em Kotlin com Spring Boot, Exposed e autenticação JWT, e um front em React com TypeScript. Cada funcionalidade é um módulo com domínio e infraestrutura separados.',
         highlightsTitle: 'Minha parte',
         highlights: [
-          { text: 'Endpoints e telas do dashboard, com indicadores e filtros.', source: 1 },
-          { text: 'Criação de campanhas.', source: 1 },
-          { text: 'Módulo de menu e endpoint de troca de avatar.', source: 1 },
-          { text: 'Padronização do tratamento de exceções.', source: 1 },
+          { text: 'Endpoints e telas do dashboard, com indicadores e filtros.' },
+          { text: 'Criação de campanhas.' },
+          { text: 'Módulo de menu e endpoint de troca de avatar.' },
+          { text: 'Padronização do tratamento de exceções.' },
         ],
         learned: [
           'Trabalhar em equipe no mesmo código: revisão, conflitos de merge e combinar padrões.',
@@ -246,9 +246,7 @@ export const pt: Content = {
           { label: 'Repositório do back-end', href: 'https://github.com/LucasVicenti12/rex_project_back' },
           { label: 'Repositório do front-end', href: 'https://github.com/KauaMelchioretto/crm-delice-front' },
         ],
-        sources: [
-          { label: 'Meus commits no back-end', href: 'https://github.com/LucasVicenti12/rex_project_back/commits?author=gustavo-domingos' },
-        ],
+        sources: [],
         seed: 1207,
       },
     ],
