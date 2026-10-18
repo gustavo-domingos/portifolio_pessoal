@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Portfólio de Gustavo Alves da Silva
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site pessoal em React, TypeScript e Vite, publicado no GitHub Pages:
+https://gustavo-domingos.github.io/portifolio_pessoal/
 
-Currently, two official plugins are available:
+A identidade é uma carta topográfica: o topo da página é um mapa desenhado em canvas, com uma trilha que passa por cada
+experiência e projeto. O relevo reage ao cursor, uma onda se espalha ao clicar e uma bicicleta pedala até a parada
+escolhida. Tudo respeita `prefers-reduced-motion` e funciona em português e inglês, nos modos claro e escuro.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Comandos
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev       # http://localhost:5173/portifolio_pessoal/
+npm test          # testes (Vitest)
+npm run lint
+npm run build     # checagem de tipos + build em dist/
+npm run deploy    # build e publicação no branch gh-pages
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Atualizar o conteúdo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Todo o texto fica em dois arquivos, um por idioma, com o mesmo formato:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- `src/content/pt.ts`
+- `src/content/en.ts`
+
+O tipo `Content` (`src/content/types.ts`) obriga os dois arquivos a terem os mesmos campos, e
+`src/content/content.test.ts` confere se os cases, paradas e fontes batem entre os idiomas. Para incluir um projeto,
+acrescente um item em `projects.cases` nos dois arquivos e, se quiser uma parada no mapa, um item em `hero.stops` e uma
+posição em `src/components/heroRoute.ts`.
+
+## Currículo
+
+As fontes do currículo ficam em `docs/curriculo/` (`curriculo-pt.html` e `resume-en.html`, com o estilo em
+`curriculo.css`). Para gerar o PDF, abra o HTML no Chrome, use Ctrl+P, escolha "Salvar como PDF" com margens padrão e
+salve em `public/cv/` com o mesmo nome do arquivo atual.
+
+## Estrutura
+
+```
+src/
+├── content/        textos (pt, en) e o tipo que os descreve
+├── i18n/           idioma atual e troca de idioma
+├── hooks/          tema, movimento reduzido, media queries
+├── lib/            mapa: funções puras (topo.ts, testadas) e o controlador do canvas (topoMap.ts)
+├── components/     cabeçalho, modal de case, miniaturas de terreno, bicicleta
+├── sections/       uma seção da página por arquivo, cada uma com o seu CSS
+└── styles/         tokens (cores, tipos, espaços) e estilos base
+public/             favicon, imagem de compartilhamento (og.png), currículos em PDF
+docs/curriculo/     fontes HTML do currículo
 ```

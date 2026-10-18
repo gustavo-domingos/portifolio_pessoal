@@ -1,10 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import '@fontsource-variable/archivo/wdth.css'
+import './styles/tokens.css'
+import './styles/base.css'
+import './styles/layout.css'
+import App from './App'
+import { LanguageProvider } from './i18n/LanguageProvider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
   </StrictMode>,
 )

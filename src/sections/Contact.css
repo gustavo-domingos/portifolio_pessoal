@@ -1,0 +1,40 @@
+.contact__inner {
+  display: grid;
+  gap: var(--e-5);
+  justify-items: start;
+}
+
+.contact__text {
+  font-size: var(--t-md);
+  color: var(--suave);
+  max-width: 40ch;
+}
+
+.contact__email-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-4);
+  margin-top: var(--e-3);
+}
+
+.contact__email {
+  font-size: clamp(1.4rem, 5.2vw, 3rem);
+  font-stretch: var(--titulo);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-decoration-color: var(--trilha);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-3) var(--e-6);
+  padding: 0;
+  list-style: none;
+  font-size: var(--t-md);
+  font-weight: 650;
+}

@@ -1,0 +1,17 @@
+main:focus {
+  outline: none;
+}
+
+.site-footer {
+  border-top: 1px solid var(--curva);
+  padding-block: var(--e-6) calc(var(--e-6) + env(safe-area-inset-bottom, 0px));
+  color: var(--suave);
+  font-size: var(--t-sm);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--e-3) var(--e-6);
+}
