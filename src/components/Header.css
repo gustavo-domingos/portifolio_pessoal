@@ -1,0 +1,121 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--terreno);
+  border-bottom: 1px solid var(--curva);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--e-4);
+  height: var(--cabecalho);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  font-stretch: var(--titulo);
+  font-weight: 800;
+  font-size: var(--t-base);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.brand__mark {
+  width: 28px;
+  height: 28px;
+}
+
+.nav {
+  position: relative;
+}
+
+.nav__toggle {
+  display: none;
+  min-height: 2.5rem;
+  padding: 0 var(--e-3);
+  border: 1.5px solid var(--tinta);
+  border-radius: var(--raio);
+  background: transparent;
+  font-weight: 650;
+  font-stretch: var(--rotulo);
+  cursor: pointer;
+}
+
+.nav__list {
+  display: flex;
+  gap: var(--e-1);
+  padding: 0;
+  list-style: none;
+}
+
+.nav__list a {
+  display: block;
+  padding: var(--e-2) var(--e-3);
+  font-stretch: var(--rotulo);
+  font-weight: 600;
+  font-size: var(--t-base);
+  text-decoration: none;
+}
+
+.site-header__tools {
+  display: flex;
+  gap: var(--e-2);
+}
+
+.tool {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 var(--e-2);
+  border: 1.5px solid var(--curva);
+  border-radius: var(--raio);
+  background: transparent;
+  font-weight: 700;
+  font-size: var(--t-sm);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.tool:hover {
+  border-color: var(--tinta);
+}
+
+@media (max-width: 52rem) {
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__list {
+    display: none;
+    position: absolute;
+    top: calc(100% + var(--e-3));
+    right: 0;
+    min-width: 12rem;
+    flex-direction: column;
+    padding: var(--e-2);
+    background: var(--superficie);
+    border: 1px solid var(--curva);
+    border-radius: var(--raio);
+    box-shadow: 0 12px 32px var(--sombra);
+  }
+
+  .nav__list[data-open='true'] {
+    display: flex;
+  }
+
+  .nav__list a {
+    padding: var(--e-3);
+  }
+}
+
+@media (max-width: 24rem) {
+  .brand span {
+    display: none;
+  }
+}

@@ -1,0 +1,92 @@
+/*
+  Currículo otimizado para leitura por ATS e IAs de recrutamento, sem perder a leitura humana.
+  Regras: uma coluna, blocos simples (sem flex, grid, tabelas ou colunas), contato no corpo,
+  títulos de seção padrão e datas em MM/AAAA. Para gerar o PDF: Chrome, Ctrl+P, "Salvar como PDF".
+*/
+@font-face {
+  font-family: 'Archivo CV';
+  src: url('../../node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+}
+
+@page {
+  size: A4;
+  margin: 9mm 14mm;
+}
+
+body {
+  margin: 0;
+  font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+  font-size: 9.4pt;
+  line-height: 1.28;
+  color: #14232b;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Archivo CV', Arial, sans-serif;
+  font-size: 20pt;
+  font-stretch: 112%;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.titulo {
+  margin: 2pt 0 4pt;
+  font-size: 12pt;
+  font-weight: 700;
+  color: #b81f33;
+}
+
+.contato {
+  margin: 0;
+  font-size: 9.5pt;
+  color: #3d5a67;
+}
+
+.contato a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 {
+  margin: 8pt 0 3pt;
+  padding-bottom: 2pt;
+  border-bottom: 1.2pt solid #b81f33;
+  font-size: 11pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+p {
+  margin: 0;
+}
+
+.cargo {
+  margin-top: 5pt;
+  font-weight: 700;
+}
+
+.meta {
+  color: #3d5a67;
+  font-size: 9.5pt;
+}
+
+ul {
+  margin: 2pt 0 0;
+  padding-left: 13pt;
+}
+
+li {
+  margin-bottom: 1pt;
+}
+
+.projeto {
+  margin-top: 4pt;
+}
+
+.competencias p {
+  margin-bottom: 2pt;
+}

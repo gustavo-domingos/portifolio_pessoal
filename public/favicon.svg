@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .chao { fill: #e3edf1 }
+    .mestra { stroke: #6c93a5 }
+    .curva { stroke: #a8c2ce }
+    .trilha { stroke: #d7263d }
+    @media (prefers-color-scheme: dark) {
+      .chao { fill: #08161d }
+      .mestra { stroke: #4a7a8f }
+      .curva { stroke: #2e5465 }
+      .trilha { stroke: #ff5a6b }
+    }
+  </style>
+  <rect class="chao" width="64" height="64" rx="14" />
+  <ellipse class="mestra" cx="30" cy="34" rx="22" ry="17" fill="none" stroke-width="3" />
+  <ellipse class="curva" cx="30" cy="34" rx="12" ry="9" fill="none" stroke-width="3" />
+  <path class="trilha" d="M8 54 C 20 46, 22 26, 38 28 S 52 14, 57 9" fill="none" stroke-width="6" stroke-linecap="round" />
+</svg>

@@ -1,0 +1,82 @@
+/*
+  Identidade: carta topográfica "Glaciar".
+  Terreno de gelo, curvas de nível em azul-petróleo e a trilha em vermelho.
+  Uma família tipográfica (Archivo) usada pelo eixo de largura:
+  expandida nos nomes, condensada nos rótulos de mapa, normal no texto.
+*/
+:root {
+  --terreno: #e3edf1;
+  --superficie: #f2f7f9;
+  --curva: #a8c2ce;
+  --mestra: #6c93a5;
+  --tinta: #0e2733;
+  --suave: #3d5a67;
+  --trilha: #d7263d;
+  --contorno: #e3edf1;
+  --destaque: #b81f33;
+  --sombra: rgb(14 39 51 / 0.18);
+  color-scheme: light;
+
+  --fonte: 'Archivo Variable', 'Archivo', 'Arial Narrow', Arial, sans-serif;
+  --mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* escala tipográfica (12, 14, 17, 21, 24, 36, 48, 72 px) */
+  --t-xs: 0.75rem;
+  --t-sm: 0.875rem;
+  --t-base: 1.0625rem;
+  --t-md: 1.3125rem;
+  --t-lg: 1.5rem;
+  --t-xl: clamp(1.75rem, 3.6vw, 2.25rem);
+  --t-2xl: clamp(2.25rem, 5vw, 3rem);
+  --t-3xl: clamp(2.5rem, 7vw, 4.5rem);
+
+  /* larguras do eixo wdth */
+  --expandida: 125%;
+  --titulo: 112%;
+  --rotulo: 75%;
+
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-5: 1.5rem;
+  --e-6: 2rem;
+  --e-7: 3rem;
+  --e-8: 4rem;
+  --e-9: 6rem;
+
+  --largura: 72rem;
+  --medida: 66ch;
+  --cabecalho: 3.75rem;
+  --raio: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --terreno: #08161d;
+    --superficie: #0d1f27;
+    --curva: #1b3540;
+    --mestra: #2e5465;
+    --tinta: #dcebf0;
+    --suave: #9db7c2;
+    --trilha: #ff5a6b;
+    --contorno: #08161d;
+    --destaque: #ff7a88;
+    --sombra: rgb(0 0 0 / 0.5);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --terreno: #08161d;
+  --superficie: #0d1f27;
+  --curva: #1b3540;
+  --mestra: #2e5465;
+  --tinta: #dcebf0;
+  --suave: #9db7c2;
+  --trilha: #ff5a6b;
+  --contorno: #08161d;
+  --destaque: #ff7a88;
+  --sombra: rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+}
