@@ -150,6 +150,12 @@ export const pt: Content = {
         links: [],
         note: 'Repositório privado enquanto o sistema está em implantação. Mostro uma demonstração com dados fictícios sob pedido.',
         sources: [],
+        images: [
+          { src: 'cases/rotas-coletas/painel.webp', width: 1440, height: 900, alt: 'Painel do dia com coletas, viagens em andamento, ocupação da frota e gráficos de movimento', caption: 'Painel do dia da operação.' },
+          { src: 'cases/rotas-coletas/viagem.webp', width: 1440, height: 900, alt: 'Viagem com quatro paradas, peso e cubagem no pico e ordem de carregamento', caption: 'Planejamento da viagem: pico de carga e ordem de carregamento.' },
+          { src: 'cases/rotas-coletas/portal-cliente.webp', width: 1440, height: 900, alt: 'Portal do cliente com as solicitações de coleta e a situação de cada uma', caption: 'Portal do cliente.' },
+          { src: 'cases/rotas-coletas/motorista-celular.webp', width: 780, height: 1688, alt: 'Área do motorista no celular com as paradas da viagem e atalhos para navegação', caption: 'Área do motorista, no celular.' },
+        ],
         seed: 4417,
       },
       {
@@ -181,6 +187,12 @@ export const pt: Content = {
         links: [],
         note: 'Repositório privado enquanto o sistema está em implantação. Mostro uma demonstração com dados fictícios sob pedido.',
         sources: [],
+        images: [
+          { src: 'cases/horas-complementares/painel-aluno.webp', width: 1440, height: 900, alt: 'Painel do aluno com horas validadas, projeção e progresso por grupo', caption: 'Painel do aluno: progresso, projeção e sugestões.' },
+          { src: 'cases/horas-complementares/analise.webp', width: 1440, height: 900, alt: 'Tela de análise com o certificado ao lado dos dados informados e o cálculo sugerido', caption: 'Análise da coordenação com o comprovante ao lado.' },
+          { src: 'cases/horas-complementares/fila-analise.webp', width: 1440, height: 900, alt: 'Fila de análise com as atividades enviadas, tipo, horas e status', caption: 'Fila de análise com validação em lote.' },
+          { src: 'cases/horas-complementares/painel-celular.webp', width: 780, height: 1688, alt: 'Painel do aluno no celular', caption: 'O mesmo painel no celular.' },
+        ],
         seed: 9031,
       },
       {
@@ -247,6 +259,10 @@ export const pt: Content = {
           { label: 'Repositório do front-end', href: 'https://github.com/KauaMelchioretto/crm-delice-front' },
         ],
         sources: [],
+        images: [
+          { src: 'cases/crm-delice/dashboard.webp', width: 1440, height: 492, alt: 'Dashboard com clientes por situação, pedidos, total vendido, carteira e operador com mais vendas e produtos mais vendidos', caption: 'Dashboard, a parte que eu desenvolvi.' },
+          { src: 'cases/crm-delice/clientes.webp', width: 1440, height: 640, alt: 'Lista de clientes com CNPJ, cidade e situação de aprovação', caption: 'Cadastro de clientes com aprovação.' },
+        ],
         seed: 1207,
       },
     ],

@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { en } from './en'
 import { pt } from './pt'
@@ -27,6 +28,15 @@ describe('conteúdo', () => {
     for (const c of [...pt.projects.cases, ...en.projects.cases]) {
       for (const h of c.highlights) {
         if (h.source !== undefined) expect(c.sources[h.source - 1], `${c.id}: fonte ${h.source}`).toBeDefined()
+      }
+    }
+  })
+
+  it('toda imagem de case existe em public/ e tem texto alternativo', () => {
+    for (const c of [...pt.projects.cases, ...en.projects.cases]) {
+      for (const img of c.images ?? []) {
+        expect(existsSync(`public/${img.src}`), img.src).toBe(true)
+        expect(img.alt.length, `${img.src}: alt`).toBeGreaterThan(10)
       }
     }
   })

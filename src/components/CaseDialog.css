@@ -39,6 +39,7 @@
 .case__sheet {
   position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--e-6);
   padding: clamp(1.25rem, 4vw, 3rem);
 }
@@ -86,7 +87,9 @@
 }
 
 .case__title {
-  font-size: var(--t-3xl);
+  font-size: clamp(2rem, 8.5vw, 4.5rem);
+  overflow-wrap: break-word;
+  hyphens: auto;
   font-stretch: var(--expandida);
   font-weight: 800;
   line-height: 0.95;
@@ -110,8 +113,9 @@
 
 .case__gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
-  gap: var(--e-5);
+  /* minmax(0, ...) impede que a largura real do print (1440px) alargue o modal no celular */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--e-6);
   padding: 0;
   list-style: none;
 }
@@ -121,12 +125,23 @@
   gap: var(--e-2);
 }
 
+.case__gallery figure {
+  min-width: 0;
+}
+
 .case__gallery img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   border: 1px solid var(--curva);
   border-radius: var(--raio);
   background: var(--terreno);
+}
+
+/* prints de celular: estreitos e centralizados, para não ocupar a tela inteira */
+.case__gallery li[data-portrait='true'] figure {
+  max-width: 17rem;
+  margin-inline: auto;
 }
 
 .case__gallery figcaption {

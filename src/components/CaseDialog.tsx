@@ -55,7 +55,7 @@ export function CaseDialog({ study, onClose }: CaseDialogProps) {
           {study.images && study.images.length > 0 && (
             <ul className="case__gallery">
               {study.images.map((img) => (
-                <li key={img.src}>
+                <li key={img.src} data-portrait={img.height > img.width}>
                   <figure>
                     <img src={asset(img.src)} alt={img.alt} width={img.width} height={img.height} loading="lazy" decoding="async" />
                     {img.caption && <figcaption>{img.caption}</figcaption>}

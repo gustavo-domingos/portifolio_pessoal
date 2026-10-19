@@ -150,6 +150,12 @@ export const en: Content = {
         links: [],
         note: 'Private repository while the system is being rolled out. I can show a demo with fictional data on request.',
         sources: [],
+        images: [
+          { src: 'cases/rotas-coletas/painel.webp', width: 1440, height: 900, alt: 'Daily dashboard with pickups, trips in progress, fleet occupancy, and activity charts', caption: 'Daily operations dashboard.' },
+          { src: 'cases/rotas-coletas/viagem.webp', width: 1440, height: 900, alt: 'Trip with four stops, peak weight and volume, and loading order', caption: 'Trip planning: peak load and loading order.' },
+          { src: 'cases/rotas-coletas/portal-cliente.webp', width: 1440, height: 900, alt: 'Customer portal listing pickup requests and their status', caption: 'Customer portal.' },
+          { src: 'cases/rotas-coletas/motorista-celular.webp', width: 780, height: 1688, alt: 'Driver area on a phone with the trip stops and navigation shortcuts', caption: 'Driver area, on a phone.' },
+        ],
         seed: 4417,
       },
       {
@@ -181,6 +187,12 @@ export const en: Content = {
         links: [],
         note: 'Private repository while the system is being rolled out. I can show a demo with fictional data on request.',
         sources: [],
+        images: [
+          { src: 'cases/horas-complementares/painel-aluno.webp', width: 1440, height: 900, alt: 'Student dashboard with approved hours, projection, and progress per group', caption: 'Student dashboard: progress, projection, and suggestions.' },
+          { src: 'cases/horas-complementares/analise.webp', width: 1440, height: 900, alt: 'Review screen with the certificate next to the submitted data and the suggested calculation', caption: 'Coordinator review with the proof document side by side.' },
+          { src: 'cases/horas-complementares/fila-analise.webp', width: 1440, height: 900, alt: 'Review queue with submitted activities, type, hours, and status', caption: 'Review queue with batch approval.' },
+          { src: 'cases/horas-complementares/painel-celular.webp', width: 780, height: 1688, alt: 'Student dashboard on a phone', caption: 'The same dashboard on a phone.' },
+        ],
         seed: 9031,
       },
       {
@@ -247,6 +259,10 @@ export const en: Content = {
           { label: 'Front-end repository', href: 'https://github.com/KauaMelchioretto/crm-delice-front' },
         ],
         sources: [],
+        images: [
+          { src: 'cases/crm-delice/dashboard.webp', width: 1440, height: 492, alt: 'Dashboard with customers by status, orders, total sold, top wallet and operator, and best-selling products', caption: 'The dashboard, the part I built.' },
+          { src: 'cases/crm-delice/clientes.webp', width: 1440, height: 640, alt: 'Customer list with company tax ID, city, and approval status', caption: 'Customer records with approval.' },
+        ],
         seed: 1207,
       },
     ],
