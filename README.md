@@ -35,8 +35,11 @@ posição em `src/components/heroRoute.ts`.
 As fontes do currículo ficam em `docs/curriculo/` (`curriculo-ats-pt.html` e `resume-ats-en.html`, com o estilo em
 `curriculo-ats.css`). O layout é pensado para sistemas de triagem (ATS): uma coluna, sem tabelas nem ícones, contato no
 corpo, títulos de seção padrão e datas em MM/AAAA. Para gerar o PDF, abra o HTML no Chrome, use Ctrl+P e "Salvar como
-PDF" com margens padrão. Salve uma cópia em `docs/curriculo/` e outra em `public/cv/` com o nome que o site usa
-(`gustavo-alves-da-silva-curriculo.pdf` e `gustavo-alves-da-silva-resume.pdf`).
+PDF" com margens padrão. Salve uma cópia em `docs/curriculo/` e outra em `public/cv/`.
+
+Ao atualizar o currículo, use um nome de arquivo novo (por exemplo, com o mês) e troque o `cv.href` em
+`src/content/pt.ts` e `en.ts`: com o mesmo nome, navegadores e o cache do GitHub Pages podem entregar a versão antiga.
+Os arquivos com nomes antigos ficam em `public/cv/` para links antigos continuarem funcionando.
 
 ## Estrutura
 

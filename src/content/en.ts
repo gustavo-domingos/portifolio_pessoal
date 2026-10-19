@@ -304,7 +304,7 @@ export const en: Content = {
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gustavo-alves-da-silva1' },
       { label: 'GitHub', href: 'https://github.com/gustavo-domingos' },
     ],
-    cv: { label: 'Résumé (PDF)', href: 'cv/gustavo-alves-da-silva-resume.pdf' },
+    cv: { label: 'Résumé (PDF)', href: 'cv/Gustavo-Alves-da-Silva-Resume-Backend-Developer.pdf' },
   },
   footer: {
     text: 'Designed and built by Gustavo Alves da Silva.',
