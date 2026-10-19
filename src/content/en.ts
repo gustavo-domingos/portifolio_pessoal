@@ -228,6 +228,11 @@ export const en: Content = {
           { label: 'backend/internal/arquitetura_test.go', href: QEV + 'backend/internal/arquitetura_test.go' },
           { label: 'backend/internal/propostas/resumo.go', href: QEV + 'backend/internal/propostas/resumo.go' },
         ],
+        images: [
+          { src: 'cases/quem-eu-voto/deputados.webp', width: 1440, height: 900, alt: 'Federal deputies page with filters and statistics for the Santa Catarina delegation: women, average age, attendance, and bills', caption: 'Federal deputies: filters and statistics for each state delegation.' },
+          { src: 'cases/quem-eu-voto/candidatos.webp', width: 1440, height: 790, alt: 'Page of 2026 candidates for governor with seats per office and the final first-round vote count', caption: '2026 candidates and vote counts from the electoral court.' },
+          { src: 'cases/quem-eu-voto/partidos.webp', width: 1440, height: 900, alt: 'Party table with 2026 candidates, seats in the Chamber, average attendance, and officials elected in 2024', caption: 'Summary by party, cross-referencing electoral and legislative data.' },
+        ],
         seed: 2026,
       },
       {

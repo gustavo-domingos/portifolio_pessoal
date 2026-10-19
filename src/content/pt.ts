@@ -228,6 +228,11 @@ export const pt: Content = {
           { label: 'backend/internal/arquitetura_test.go', href: QEV + 'backend/internal/arquitetura_test.go' },
           { label: 'backend/internal/propostas/resumo.go', href: QEV + 'backend/internal/propostas/resumo.go' },
         ],
+        images: [
+          { src: 'cases/quem-eu-voto/deputados.webp', width: 1440, height: 900, alt: 'Página de deputados federais com filtros e estatísticas da bancada de Santa Catarina: mulheres, idade média, assiduidade e projetos', caption: 'Deputados federais: filtros e estatísticas da bancada do estado.' },
+          { src: 'cases/quem-eu-voto/candidatos.webp', width: 1440, height: 790, alt: 'Página de candidaturas a governador em 2026 com vagas por cargo e a apuração encerrada do primeiro turno', caption: 'Candidaturas de 2026 e apuração com dados do TSE.' },
+          { src: 'cases/quem-eu-voto/partidos.webp', width: 1440, height: 900, alt: 'Tabela de partidos com candidaturas em 2026, bancada na Câmara, assiduidade média e eleitos em 2024', caption: 'Resumo por partido, cruzando TSE e Câmara.' },
+        ],
         seed: 2026,
       },
       {
