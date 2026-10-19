@@ -20,6 +20,7 @@ export function Hero({ onStop }: HeroProps) {
   const hostRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const altRef = useRef<HTMLSpanElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<TopoMap | null>(null)
   const introPlayed = useRef(false)
   const [reached, setReached] = useState<boolean[]>(() => layout.stops.map(() => reduced))
@@ -60,6 +61,57 @@ export function Hero({ onStop }: HeroProps) {
     }
   }, [reduced, layout])
 
+  // As paradas ficam em frações da altura do mapa. Em janelas baixas, o texto do topo ocupa
+  // proporcionalmente mais espaço e as paradas subiriam por cima dele; aqui o mapa cresce o
+  // suficiente para toda parada (e o rótulo dela) passar abaixo do texto.
+  useEffect(() => {
+    const host = hostRef.current
+    const text = textRef.current
+    if (!host || !text) return
+    const GAP = 14 // folga entre o texto e o que estiver acima da parada
+    const DOT = 16 // meio marcador mais a borda
+    const fit = () => {
+      host.style.minHeight = ''
+      const map = host.getBoundingClientRect()
+      // mede cada peça (não o container dos botões, que ocupa a largura toda)
+      const parts = [...text.querySelectorAll('.hero__name, .hero__lede, .hero__actions > *')].map((el) => {
+        const r = el.getBoundingClientRect()
+        return { left: r.left - map.left, right: r.right - map.left, bottom: r.bottom - map.top }
+      })
+      const labels = [...host.querySelectorAll<HTMLElement>('.stop__label')]
+      let needed = 0
+      layout.stops.forEach((index, n) => {
+        const [fx, fy] = layout.route[index]
+        const x = fx * map.width
+        const { position, anchor } = layout.labels[n]
+        const w = labels[n]?.offsetWidth ?? 0
+        const h = labels[n]?.offsetHeight ?? 0
+        // faixa horizontal ocupada pela parada e pelo rótulo
+        const [from, to] =
+          position === 'right' ? [x - DOT, x + 19 + w]
+          : anchor === 'start' ? [x - DOT, Math.max(x + DOT, x - 13 + w)]
+          : anchor === 'end' ? [Math.min(x - DOT, x + 13 - w), x + DOT]
+          : [Math.min(x - DOT, x - w / 2), Math.max(x + DOT, x + w / 2)]
+        const above = parts.filter((p) => p.left < to && p.right > from)
+        if (!above.length) return
+        const textBottom = Math.max(...above.map((p) => p.bottom))
+        // distância do centro da parada até o ponto mais alto dela (marcador ou rótulo acima)
+        const reachUp = position === 'above' ? 18 + h : DOT
+        needed = Math.max(needed, (textBottom + GAP + reachUp) / fy)
+      })
+      if (needed > map.height) host.style.minHeight = `${Math.ceil(needed)}px`
+    }
+    fit()
+    const ro = new ResizeObserver(fit)
+    ro.observe(text)
+    window.addEventListener('resize', fit)
+    document.fonts?.ready.then(fit)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', fit)
+    }
+  }, [layout, t])
+
   const toggleDrift = () => {
     const next = !drift
     setDrift(next)
@@ -76,7 +128,7 @@ export function Hero({ onStop }: HeroProps) {
       <div ref={hostRef} className="hero__map">
         <canvas ref={canvasRef} className="hero__canvas" aria-hidden="true" />
 
-        <div className="container hero__text">
+        <div ref={textRef} className="container hero__text">
           <h1 id="hero-nome" className="hero__name">{t.hero.name}</h1>
           <p className="hero__lede">{t.hero.lede}</p>
           <div className="hero__actions">
